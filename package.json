@@ -5,7 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:styles": "node-sass src/styles/giphy.scss --source-map true public/assets/styles/giphy.css",
+    "watch:styles": "node-sass --watch src/styles/giphy.scss public/assets/styles/giphy.css"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,8 @@
   },
   "homepage": "https://github.com/Sylv0/giphy_clone#readme",
   "dependencies": {
-    "query-string": "^5.0.1"
+    "node-sass": "^4.7.2",
+    "query-string": "^5.0.1",
+    "sanitize.css": "^5.0.0"
   }
 }
