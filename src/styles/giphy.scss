@@ -1,0 +1,71 @@
+@import '../../node_modules/sanitize.css/sanitize';
+
+$formSize: 80px;
+
+* {
+
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body{
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    header{
+
+        width: 100%;
+
+        img{
+
+            width: 70%;
+            margin: 0 15%;
+        }
+    }
+
+    main{
+
+        form{
+
+            display: flex;
+            width: 70%;
+            margin: 0 15%;
+
+            .search__input{
+
+                height: $formSize;
+                border-color: hotpink;
+                border-right: none;
+                flex-grow: 1;
+                padding-left: 20px;
+                border-width: 1px;
+                transition: all .75s ease-in-out;
+                min-width: 0px;
+
+                &:focus{
+                    border-width: 10px;
+                }
+            }
+
+            .search__button{
+
+                background-image: url('../images/search.gif');
+                background-position: center;
+                background-size: 100%;
+                min-width: $formSize;
+                border: none;
+            }
+        }
+    }
+
+    footer.footer{
+
+        justify-self: flex-end;
+
+        p{
+            text-align: center;
+        }
+    }
+}
