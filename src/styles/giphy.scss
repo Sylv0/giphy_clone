@@ -1,4 +1,29 @@
 @import '../../node_modules/sanitize.css/sanitize';
+
+@keyframes BackgroundGradient {
+    0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes FontColor {
+    0%{
+        color: #FFF;
+    }
+    50%{
+        color: #000;
+    }
+    100%{
+        color: #FFF;
+    }
+}
+
 $formSize: 80px;
 * 
 {
@@ -40,18 +65,19 @@ body
                     border-width: 10px;
                     background-image: none;
                 }
-                background-image: url('../images/search.gif');
-                background-size: 100%;
-                background-position: bottom;
+                background: linear-gradient(-90deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+                background-size: 200% 200%;
+                color: #fff;
+                animation: BackgroundGradient 5s ease infinite;
             }
             .search__button
             {
-                background-image: url('../images/search.gif');
-                background-position: center;
-                background-size: 100%;
                 min-width: $formSize;
                 border: none;
                 flex-grow: .1;
+                background: linear-gradient(90deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+                background-size: 200% 200%;
+                animation: BackgroundGradient 5s ease infinite;
             }
         }
     }
@@ -60,5 +86,6 @@ body
         p{
             text-align: center;
         }
+        
     }
 }
