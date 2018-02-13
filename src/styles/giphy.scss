@@ -1,14 +1,14 @@
 @import '../../node_modules/sanitize.css/sanitize';
 
 @keyframes BackgroundGradient {
-    0% {
-		background-position: 0% 50%
+  0% {
+		background-position: 0% 100%
 	}
 	50% {
-		background-position: 100% 50%
+		background-position: 200% 100%
 	}
 	100% {
-		background-position: 0% 50%
+		background-position: 0% 100%
 	}
 }
 
@@ -61,13 +61,14 @@ body
                 padding-left: 20px;
                 transition: all .75s ease-in-out;
                 min-width: 0px;
+                font-weight: 100;
                 &:focus{
                     border-width: 10px;
-                    background-image: none;
+                    font-weight: 900;
                 }
                 background: linear-gradient(-90deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-                background-size: 200% 200%;
-                color: #fff;
+                background-size: 100% 100%;
+                color: #000;
                 animation: BackgroundGradient 5s ease infinite;
             }
             .search__button
@@ -75,8 +76,10 @@ body
                 min-width: $formSize;
                 border: none;
                 flex-grow: .1;
+                background-image: URL('./assets/images/search.png');
                 background: linear-gradient(90deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-                background-size: 200% 200%;
+                background-size: auto;
+                background-position: center;
                 animation: BackgroundGradient 5s ease infinite;
             }
         }

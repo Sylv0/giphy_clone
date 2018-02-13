@@ -7,6 +7,8 @@
  * file that was distributed with this source code.
  */
 
+import { Search } from "./search";
+
 let LOADED = false;
 
 /**
@@ -27,7 +29,11 @@ function bootstrap () {
   // When the application is loaded we remove the event listeners.
   document.removeEventListener('DOMContentLoaded', bootstrap);
   window.removeEventListener('load', bootstrap);
-}
+
+  document.querySelector(".search__input").addEventListener('keyup', e => {
+    console.log(Search(e.target.value));
+  });
+};
 
 // We setup two listeners for better browser support.
 document.addEventListener('DOMContentLoaded', bootstrap);

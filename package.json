@@ -5,12 +5,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "semistandard --verbose | snazzy",
     "build:styles": "node-sass src/styles/giphy.scss --source-map true public/assets/styles/giphy.css",
-    "build:scripts": "rollup --config",
+    "build:scripts": "rollup --config --environment NODE_ENV:production",
     "build": "npm-run-all --parallel build:styles build:scripts",
     "watch:styles": "node-sass --watch src/styles/giphy.scss public/assets/styles/giphy.css",
     "watch:scripts": "rollup --config --watch",
-    "browser": "browser-sync start --server public --files public/**/*",
+    "browser": "browser-sync start --server public --files public/**/*.*",
     "watch": "npm-run-all --parallel watch:styles watch:scripts browser"
   },
   "repository": {
@@ -24,11 +25,25 @@
   },
   "homepage": "https://github.com/Sylv0/giphy_clone#readme",
   "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.23.6",
     "node-sass": "^4.7.2",
     "npm-run-all": "^4.1.2",
     "query-string": "^5.0.1",
     "rollup": "^0.55.3",
-    "sanitize.css": "^5.0.0"
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.3.0",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-plugin-uglify": "^3.0.0",
+    "sanitize.css": "^5.0.0",
+    "semistandard": "^12.0.0",
+    "snazzy": "^7.0.0"
+  },
+  "semistandard": {
+    "ignore": [
+      "./public/"
+    ]
   }
 }

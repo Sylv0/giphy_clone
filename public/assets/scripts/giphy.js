@@ -1,6 +1,14 @@
 (function () {
 'use strict';
 
+var search_timeout = void 0;
+
+var Search = function Search(query) {
+  clearTimeout(search_timeout);
+  if (query.length < 1) return;
+  return "Searcging for " + query;
+};
+
 /*
  * This file is part of Giphy.
  *
@@ -10,14 +18,14 @@
  * file that was distributed with this source code.
  */
 
-let LOADED = false;
+var LOADED = false;
 
 /**
  * Bootstrap the application on load.
  *
  * @return {void}
  */
-function bootstrap () {
+function bootstrap() {
   // We don't want to load our application twice.
   if (LOADED) {
     return;
@@ -30,6 +38,10 @@ function bootstrap () {
   // When the application is loaded we remove the event listeners.
   document.removeEventListener('DOMContentLoaded', bootstrap);
   window.removeEventListener('load', bootstrap);
+
+  document.querySelector(".search__input").addEventListener('keyup', function (e) {
+    console.log(Search(e.target.value));
+  });
 }
 
 // We setup two listeners for better browser support.
