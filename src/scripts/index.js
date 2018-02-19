@@ -8,6 +8,7 @@
  */
 
 import { Search } from "./search";
+import App from './App';
 
 let LOADED = false;
 
@@ -30,9 +31,11 @@ function bootstrap () {
   document.removeEventListener('DOMContentLoaded', bootstrap);
   window.removeEventListener('load', bootstrap);
 
-  document.querySelector(".search__input").addEventListener('keyup', e => {
-    console.log(Search(e.target.value));
-  });
+  window.app = new App(document.forms[0]);
+
+  // document.querySelector(".search__input").addEventListener('keyup', e => {
+  //   console.log(Search(e.target.value));
+  // });
 };
 
 // We setup two listeners for better browser support.
