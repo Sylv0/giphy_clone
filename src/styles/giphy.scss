@@ -31,7 +31,7 @@ $formSize: 80px;
 }
 body
 {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,7 +83,33 @@ body
                 animation: BackgroundGradient 5s ease infinite;
             }
         }
-    }
+        .gallery {
+          min-height: 0px;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          justify-content: center;
+          align-items: center;
+          background-color: #000011;
+          margin-top: 5em;
+          
+          @media (max-width: 1000px) {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          @media (max-width: 500px), (orientation: portrait) {
+            grid-template-columns: 1fr;
+          }
+
+          video {
+            width: calc(100% - 2em);
+            height: auto;
+            margin: 1em;
+          }
+        }
+        .not-fount {
+          text-align: center;
+        }
+    } // MAIN END
     footer.footer
     {
         p{
